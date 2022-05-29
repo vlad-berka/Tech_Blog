@@ -25,7 +25,8 @@ const newCommentHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  // event.preventDefault();
+  event.preventDefault();
+  event.stopPropagation();
   console.log(event.target);
 
   if (event.target.hasAttribute("data-id")) {
@@ -37,7 +38,7 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      // document.location.replace(`/blog/${blog_id}`);
+      document.location.replace(`/blog/${blog_id}`);
     } else {
       alert("Failed to delete blog post in del button handler");
     }
