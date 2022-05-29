@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { json } = require("express/lib/response");
 const { Blog, User, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 
@@ -53,11 +54,13 @@ router.get("/project/:id", async (req, res) => {
     const blogs = blogData.get({ plain: true });
     // const comments = commentData.get({ plain: true });
     const comments = commentData.map((comment) => comment.get({ plain: true }));
+    // blogs.curr_use = 1;
+console.log(comments);
 
-    res.render("project", {
+     res.render("project", {
       ...blogs,
       comments,
-      logged_in: req.session.logged_in,
+      curr_use: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);

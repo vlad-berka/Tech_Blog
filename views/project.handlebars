@@ -1,4 +1,4 @@
-<div class="text-center">
+<div class="text-center comment-list">
   <h2>{{title}}</h2>
   <p>{{body_content}}</p>
   <p>Created by {{user.user_name}} on {{format_date date_created}}</p>
@@ -6,21 +6,20 @@
   {{#each comments as |comment| }}
   <div class="row mb-4 project">
     <div class="col-md-7">
-      <h2>
-        <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-        {{!-- <a href="/project/{{blog.id}}">{{comment.title}}</a> --}}
-      </h2>
-    </div>
-    <div class="col-md-7">
       <p>
         "{{comment.body_content}}"
       </p>
+      <p>{{curr_use}}</p>
       <p>Comment by {{comment.user.user_name}} on {{format_date comment.date_created}}</p>
     </div>
   </div>
+  {{#if (isUser ../curr_use comment.user.id)}}
+    <p>
+      <button class="btn btn-primary" data-id="{{comment.id}}" data-blog_id="{{blog_id}}">delete!</button>
+    </p>
+  {{/if}}
   {{/each}}
 
-  <p>
-    <button class="btn btn-primary">delete!</button>
-  </p>
 </div>
+
+<script src="../js/blog.js"></script>

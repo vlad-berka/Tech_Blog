@@ -19,4 +19,7 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  isUser: (user1, user2) => {
+    return user1===user2;
+  },
 };
