@@ -1,30 +1,33 @@
-const newFormHandler = async (event) => {
+const newCommentHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector("#blog-title").value.trim();
-  const body_content = document
-    .querySelector("#blog-body_content")
-    .value.trim();
-    const blog_id = event.target.getAttribute("data-id");
+  const blog_id = event.target[1].getAttribute("data-id");
 
-  if (title && body_content && blog_id) {
-    const response = await fetch(`/api/blogs`, {
+  const body_content = document
+    .querySelector("#comment-body_content")
+    .value.trim();
+
+  if (blog_id && body_content) {
+    const response = await fetch(`/api/comments`, {
       method: "POST",
-      body: JSON.stringify({ title, body_content, blog_id }),
+      body: JSON.stringify({ blog_id, body_content }),
       headers: {
         "Content-Type": "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace(`/blog/${blog_id}`);
     } else {
-      alert("Failed to create blog post");
+      alert("Failed to create comment");
     }
   }
 };
 
 const delButtonHandler = async (event) => {
+  // event.preventDefault();
+  console.log(event.target);
+
   if (event.target.hasAttribute("data-id")) {
     const comment_id = event.target.getAttribute("data-id");
     const blog_id = event.target.getAttribute("data-blog_id");
@@ -34,14 +37,17 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace(`/project/${blog_id}`);
+      // document.location.replace(`/blog/${blog_id}`);
     } else {
-      alert("Failed to delete blog post");
+      alert("Failed to delete blog post in del button handler");
     }
   }
 };
 
 document
-    .querySelector('.comment-list')
-    .addEventListener('click', delButtonHandler);
+  .querySelector(".new-comment-form")
+  .addEventListener("submit", newCommentHandler);
 
+document
+  .querySelector(".comment-list")
+  .addEventListener("click", delButtonHandler);
