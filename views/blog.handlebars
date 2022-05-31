@@ -1,32 +1,32 @@
-<div class="text-center">
+<div class="text-left">
   <h2>{{title}}</h2>
+    <p class="italicized font_small">Created by <span class="bold">{{user.user_name}}</span> on {{format_date date_created}}</p>
   <p>{{body_content}}</p>
-  <p>Created by {{user.user_name}} on {{format_date date_created}}</p>
 
   {{#if logged_in}}
       <form class="form new-comment-form">
       <div class="form-group">
         <label for="comment-body_content">New Comment:</label>
-        <input class="form-input" type="text" id="comment-body_content" name="comment-body_content" />
+        <input class="form-input form_input_size" type="text" id="comment-body_content" name="comment-body_content" />
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" data-id="{{blog_id}}">Add Comment!</button>
+      <div class="form-group d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary button_margin" data-id="{{blog_id}}">Add Comment!</button>
       </div>
     </form>
   {{/if}}
 
+  <div class="row mb-4 justify-content-left comment-list">
   {{#each comments as |comment| }}
-  <div class="row mb-4 project comment-list">
-    <div class="col-md-7">
+    <div class="col-md-7 justify-content-left comment">
       <p>
         "{{comment.body_content}}"
       </p>
-      <p>{{curr_use}}</p>
-      <p>Comment by {{comment.user.user_name}} on {{format_date comment.date_created}}</p>
+      {{!-- <p>{{curr_use}}</p> --}}
+      <p class="italicized font_small text-right">Comment by <span class="bold">{{comment.user.user_name}}</span> on {{format_date comment.date_created}}</p>
     </div>
   {{#if (isUser ../curr_use comment.user.id)}}
-    <p>
-      <button class="btn btn-primary" data-id="{{comment.id}}" data-blog_id="{{blog_id}}">delete!</button>
+    <p class="d-flex justify-content-center">
+      <button class="btn btn-primary button_margin btn-danger" data-id="{{comment.id}}" data-blog_id="{{blog_id}}">Delete Comment!</button>
     </p>
   {{/if}}
   {{/each}}

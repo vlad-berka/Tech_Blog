@@ -25,9 +25,8 @@ const newCommentHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  event.preventDefault();
-  event.stopPropagation();
   console.log(event.target);
+  event.preventDefault();
 
   if (event.target.hasAttribute("data-id")) {
     const comment_id = event.target.getAttribute("data-id");

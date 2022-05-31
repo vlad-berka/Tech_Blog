@@ -1,0 +1,88 @@
+/* Standard two tone color pallate, text and background */
+:root{
+  --light_text: rgb(140, 143, 146);
+  /* --hightlight_color: rgb(68, 27, 27); */
+  --hightlight_color: rgb(19, 22, 20);
+  --background_color: #795c34;
+}
+/* Global properties for the entire page */
+* {
+
+}
+
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+h2 {
+  font-family: arial;
+  font-weight: bold;
+}
+
+/* Container Flex properties for nested flex boxes, both columns*/
+.img_box_background {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 30vh;
+  max-width: 100vw;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.branding {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-weight: bolder;
+}
+
+.title_container {
+  margin-top: 50px;
+  padding-left: 50px;
+}
+
+.italicized {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.comment {
+  border-top: 1px solid grey;
+  /* border-bottom: 1px solid grey; */
+  padding-top: 10px;
+  /* min-width: 75vw; */
+  width: 100%;
+}
+
+.font_small {
+  font-size: 13px;
+}
+
+.button_margin {
+  margin: 15px 0 15px 0px;
+}
+
+.form_input_size {
+  width: 90%;
+  height: 15vh;
+}
+
+.form_input_size_small {
+  width: 90%;
+}
+
+.blog_list {
+  border-bottom: 1px solid grey;
+}
