@@ -2,36 +2,36 @@
   {
     "blog_id": 1,
     "user_id": 1,
-    "body_content": "this is a comment 1"
+    "body_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tincidunt ornare massa eget egestas. Sed enim ut sem viverra."
   },
   {
     "blog_id": 1,
     "user_id": 2,
-    "body_content": "this is a comment 2"
+    "body_content": "Tellus at urna condimentum mattis pellentesque. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit."
   },
   {
     "blog_id": 2,
     "user_id": 1,
-    "body_content": "this is a comment 3"
+    "body_content": "Sem viverra aliquet eget sit amet tellus cras. Aenean pharetra magna ac placerat vestibulum. Mi tempus imperdiet nulla malesuada pellentesque elit eget. Etiam tempor orci eu lobortis."
   },
   {
     "blog_id": 2,
     "user_id": 1,
-    "body_content": "this is a comment 4"
+    "body_content": "Viverra tellus in hac habitasse platea. Vehicula ipsum a arcu cursus vitae. Ut enim blandit volutpat maecenas volutpat. Ultrices sagittis orci a scelerisque purus semper."
+  },
+  {
+    "blog_id": 3,
+    "user_id": 3,
+    "body_content": "Cras ornare arcu dui vivamus arcu felis bibendum ut. Dui accumsan sit amet nulla facilisi morbi tempus iaculis urna. Gravida rutrum quisque non tellus orci ac auctor augue mauris."
   },
   {
     "blog_id": 3,
     "user_id": 1,
-    "body_content": "this is a comment 5"
+    "body_content": "Vehicula ipsum a arcu cursus vitae. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus."
   },
   {
     "blog_id": 3,
-    "user_id": 1,
-    "body_content": "this is a comment 6"
-  },
-  {
-    "blog_id": 3,
-    "user_id": 2,
-    "body_content": "this is a comment 7"
+    "user_id": 3,
+    "body_content": "Etiam tempor orci eu lobortis."
   }
 ]
